@@ -1,12 +1,12 @@
 .logo-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 logos per row */
-    grid-template-rows: repeat(3, 1fr);    /* 3 rows total */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-template-rows: repeat(3, 1fr);    /* 3 rows */
     gap: 10px;
 }
 
 .logo-slot {
-    width: 150px; /* Set your desired logo size */
+    width: 150px;
     height: 150px;
     background-size: contain;
     background-position: center;
