@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return shuffledLogos.slice(0, 15);
     }
 
-    function randomizeLogos() {
+   function randomizeLogos() {
     const selectedLogos = getRandomLogos();
     document.querySelectorAll('.logo-slot').forEach((element, index) => {
         setTimeout(function () {
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
             element.classList.add('fade-out');
             element.addEventListener('transitionend', function () {
                 element.style.backgroundImage = `url(${selectedLogos[index]})`;
-                console.log("Applied background image:", selectedLogos[index]); // New log to check if images are being applied
+                console.log("Applied background image to slot", index, ":", selectedLogos[index]); // Log the image applied to each slot
                 element.classList.remove('fade-out');
                 element.classList.add('fade-in');
             }, { once: true });
