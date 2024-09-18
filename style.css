@@ -4,15 +4,24 @@
     grid-template-rows: repeat(3, 1fr);    /* 3 rows total */
     gap: 10px;
     padding: 20px;
-    background-color: #f0f0f0; /* Background color to see the grid */
+    background-color: #f0f0f0; /* Background color to ensure the grid is visible */
 }
 
 .logo-slot {
     width: 150px;
     height: 150px;
-    background-size: contain; /* Ensures the logo fits within the slot */
+    background-size: contain; /* Ensure the logo fits within the slot */
     background-position: center;
     background-repeat: no-repeat;
     border: 1px solid #000; /* Border to visualize the slot boundaries */
-    opacity: 1; /* Ensure images are fully visible */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.fade-in {
+    opacity: 1; /* Fully visible */
+}
+
+.fade-out {
+    opacity: 0; /* Fully hidden */
 }
