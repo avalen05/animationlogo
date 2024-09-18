@@ -1,18 +1,19 @@
 .logo-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-template-columns: repeat(5, 1fr); /* 5 logos per row */
     grid-template-rows: repeat(3, 1fr);    /* 3 rows */
     gap: 10px;
 }
 
 .logo-slot {
-    width: 150px;
-    height: 150px;
-    background-size: contain;
+    width: 150px; /* Set a visible width */
+    height: 150px; /* Set a visible height */
+    background-size: contain; /* Ensure the logo fits within the slot */
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    border: 1px solid #ddd; /* Optional: Add a border to see the logo slots */
 }
 
 .fade-in {
