@@ -3,17 +3,19 @@
     grid-template-columns: repeat(5, 1fr); /* 5 logos per row */
     grid-template-rows: repeat(3, 1fr);    /* 3 rows */
     gap: 10px;
+    padding: 20px; /* Add some padding to ensure the grid isn't hidden */
+    background-color: #f0f0f0; /* Add a light background to see the grid area */
 }
 
 .logo-slot {
-    width: 150px; /* Set a visible width */
-    height: 150px; /* Set a visible height */
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
     background-size: contain; /* Ensure the logo fits within the slot */
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    border: 1px solid #ddd; /* Optional: Add a border to see the logo slots */
+    border: 1px solid #000; /* Add a border to see the slots */
 }
 
 .fade-in {
@@ -22,4 +24,8 @@
 
 .fade-out {
     opacity: 0;
+}
+#slot-1 {
+    background-image: url('https://static.wixstatic.com/media/ebb0f2_3de538a79c4a403b98cf0e5471286a0e~mv2.png') !important;
+    opacity: 1 !important;
 }
