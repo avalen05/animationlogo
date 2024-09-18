@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Array of unique logo image URLs
+    console.log("Page loaded successfully");
+
     const logos = [
         'https://static.wixstatic.com/media/ebb0f2_3de538a79c4a403b98cf0e5471286a0e~mv2.png',
         'https://static.wixstatic.com/media/ebb0f2_eee326a658f14f46979b3b1e14da4b98~mv2.png',
@@ -23,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
         'https://static.wixstatic.com/media/ebb0f2_3ab9a3e131f0428bb2990099e1bf23f4~mv2.png'
     ];
 
-    // Shuffle function for randomizing logos
+    console.log("Logos array initialized", logos);
+
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -32,13 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return array;
     }
 
-    // Function to select 15 random logos from the array of 20
     function getRandomLogos() {
         const shuffledLogos = shuffle([...logos]);
-        return shuffledLogos.slice(0, 15); // Select 15 logos from the shuffled array
+        console.log("Shuffled logos", shuffledLogos);
+        return shuffledLogos.slice(0, 15);
     }
 
-    // Function to randomize and fade in/out logos
     function randomizeLogos() {
         const selectedLogos = getRandomLogos();
         document.querySelectorAll('.logo-slot').forEach((element, index) => {
@@ -50,13 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     element.classList.remove('fade-out');
                     element.classList.add('fade-in');
                 }, { once: true });
-            }, Math.random() * 2000); // Randomize the delay for the effect
+            }, Math.random() * 2000);
         });
     }
 
-    // Start randomizing logos every 5 seconds
     setInterval(randomizeLogos, 5000);
-
-    // Initial call to display the first set of logos
     randomizeLogos();
 });
