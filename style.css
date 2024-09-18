@@ -1,31 +1,18 @@
 .logo-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 logos per row */
-    grid-template-rows: repeat(3, 1fr);    /* 3 rows */
+    grid-template-rows: repeat(3, 1fr);    /* 3 rows total */
     gap: 10px;
-    padding: 20px; /* Add some padding to ensure the grid isn't hidden */
-    background-color: #f0f0f0; /* Add a light background to see the grid area */
+    padding: 20px;
+    background-color: #f0f0f0; /* Background color to see the grid */
 }
 
 .logo-slot {
-    width: 150px; /* Set a fixed width */
-    height: 150px; /* Set a fixed height */
-    background-size: contain; /* Ensure the logo fits within the slot */
+    width: 150px;
+    height: 150px;
+    background-size: contain; /* Ensures the logo fits within the slot */
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    border: 1px solid #000; /* Add a border to see the slots */
-}
-
-.fade-in {
-    opacity: 1;
-}
-
-.fade-out {
-    opacity: 0;
-}
-#slot-1 {
-    background-image: url('https://static.wixstatic.com/media/ebb0f2_3de538a79c4a403b98cf0e5471286a0e~mv2.png') !important;
-    opacity: 1 !important;
+    border: 1px solid #000; /* Border to visualize the slot boundaries */
+    opacity: 1; /* Ensure images are fully visible */
 }
