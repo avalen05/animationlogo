@@ -24,9 +24,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("Logos array initialized", logos);
 
-    // Apply logos to slots directly without any fade effects
-    document.querySelectorAll('.logo-slot').forEach((element, index) => {
-        element.style.backgroundImage = `url(${logos[index]})`;
-        console.log("Applied background image to slot", index, ":", logos[index]);
-    });
+    // Shuffle function to randomize logos
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Function to get 15 random logos
+    function getRandomLogos() {
+        const shuffledLogos = shuffle([...logos]);
+        return shuffledLogos.slice(0, 15); // Select 15 logos
+    }
+
+    // Function to randomize and apply animations to logos
+    function randomizeLogos() {
+        const selectedLogos = getRandomLogos();
+        document.querySelectorAll('.logo-slot').forEach((element, index) => {
+            setTimeout(function () {
+                element.classList.remove('fade-in');
+                element.classList.add('fade-out');
+                element.addEventListener('transitionend', function () {
+                    element.style.backgroundImage = `url(${selectedLogos[index]})`;
+                    element.classList.remove('fade-out');
+                    element.classList.add('fade-in');
+                }, { once: true });
+            }, Math.random() * 2000); // Randomize the delay for the effect
+        });
+    }
+
+    // Start randomizing logos every 5 seconds
+    setInterval(randomizeLogos, 5000);
+
+    // Initial call to display the first set of logos
+    randomizeLogos();
 });
