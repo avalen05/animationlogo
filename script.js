@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     'https://via.placeholder.com/150/FF00FF/FFFFFF?text=Logo20'
 ];
 
+
     console.log("Logos array initialized", logos);
 
     function shuffle(array) {
