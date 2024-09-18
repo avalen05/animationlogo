@@ -14,14 +14,4 @@
     background-position: center;
     background-repeat: no-repeat;
     border: 1px solid #000; /* Border to visualize the slot boundaries */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 1s ease-in-out; /* Smooth transition */
-}
-
-.fade-in {
-    opacity: 1; /* Fully visible */
-}
-
-.fade-out {
-    opacity: 0; /* Fully hidden */
 }
