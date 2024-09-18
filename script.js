@@ -41,20 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function randomizeLogos() {
-        const selectedLogos = getRandomLogos();
-        document.querySelectorAll('.logo-slot').forEach((element, index) => {
-            setTimeout(function () {
-                element.classList.remove('fade-in');
-                element.classList.add('fade-out');
-                element.addEventListener('transitionend', function () {
-                    element.style.backgroundImage = `url(${selectedLogos[index]})`;
-                    element.classList.remove('fade-out');
-                    element.classList.add('fade-in');
-                }, { once: true });
-            }, Math.random() * 2000);
-        });
-    }
-
-    setInterval(randomizeLogos, 5000);
-    randomizeLogos();
-});
+    const selectedLogos = getRandomLogos();
+    document.querySelectorAll('.logo-slot').forEach((element, index) => {
+        setTimeout(function () {
+            element.classList.remove('fade-in');
+            element.classList.add('fade-out');
+            element.addEventListener('transitionend', function () {
+                element.style.backgroundImage = `url(${selectedLogos[index]})`;
+                console.log("Applied background image:", selectedLogos[index]); // New log to check if images are being applied
+                element.classList.remove('fade-out');
+                element.classList.add('fade-in');
+            }, { once: true });
+        }, Math.random() * 2000); // Randomize the delay for the effect
+    });
+}
